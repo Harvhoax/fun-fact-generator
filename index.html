@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #282c34;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #61dafb;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #21a1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Fact About Space</h1>
+        <p id="fact"></p>
+        <button id="generateFact">Generate Another Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "The universe is approximately 13.8 billion years old.",
+            "There are more stars in the universe than grains of sand on all the Earth's beaches.",
+            "A day on Venus is longer than a year on Venus.",
+            "Neutron stars are so dense that a sugar-cube-sized amount of material from one would weigh about as much as all of humanity.",
+            "The footprints on the Moon will remain there for millions of years because there is no wind to erode them.",
+            "One million Earths could fit inside the Sun.",
+            "Black holes are regions in space where the gravitational pull is so strong that nothing, not even light, can escape from them.",
+            "The observable universe is about 93 billion light-years in diameter.",
+            "Mars has the largest volcano in the solar system, Olympus Mons, which is about 13.6 miles high.",
+            "The Great Wall of Galaxies is the largest known structure in the universe, spanning over 500 million light-years."
+        ];
+
+        function generateFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+
+        // Initial fact generation
+        generateFact();
+
+        // Event listener for button
+        document.getElementById('generateFact').addEventListener('click', generateFact);
+    </script>
+</body>
+</html>
